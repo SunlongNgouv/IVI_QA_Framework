@@ -12,13 +12,14 @@ class IVISystem:
         self.media_playing_enabled = False
         self.media_library_visible = False
 
-        self.battery_volt_default = 0
+        self.battery_voltage = 0
         self.engine_start_volt = 12
         self.engine_boot = False
 
         self.drive_time_mode_available = False
         self.drive_time_mode_enabled = False
         self.drive_time_mode_run = False
+        self.track_drive_time = ''
 
         self.current_driving_time = time(0,0)
         self.rush_hours = [(time(6,0),time(10,0)), (time(15,0),time(19,0))]
@@ -60,12 +61,23 @@ class IVISystem:
             raise RuntimeError("Media library is not ready yet")
         else:
             self.media_playing_enabled = True
-        return True
+
+    def enable_media_drive_time(self):
+        if not self.media_library_visible:
+            raise RuntimeError("Media library is not ready yet")
+        elif not self.drive_time_mode_run:
+            raise RuntimeError("Drive Time mode is not ready yet")
+        else:
+            self.media_playing_enabled = True
+            self.track_drive_time = 'Drive Time'
+
+    def set_battery_volt_now(self, volt:float):
+        self.battery_voltage = volt
 
     def enable_boot_engine(self):
         if self.power_state != "ON":
             raise RuntimeError("System must be ON")
-        elif self.battery_volt_default < self.engine_start_volt:
+        elif self.battery_voltage <= self.engine_start_volt:
             raise RuntimeError("LOW_VOLTAGE")
         else:
             self.engine_boot = True
@@ -84,11 +96,10 @@ class IVISystem:
             self.drive_time_mode_available = True
 
     def enable_drive_time_mode(self):
-        if self.is_drive_time_mode_available() != True:
+        if self.drive_time_mode_available != True:
             raise RuntimeError("'Drive Time' mode is not available at this time")
         else:
             self.drive_time_mode_enabled = True
-        return True
 
     def run_drive_time_mode(self):
         if self.drive_time_mode_enabled != True:
@@ -103,8 +114,7 @@ class IVISystem:
     def is_rush_hour(self):
         return any(start <= self.current_driving_time <= end for start, end in self.rush_hours)
 
-    def is_drive_time_mode_available(self):
-        return self.drive_time_mode_available
+
 
 if __name__ == "__main__":
     system = IVISystem()

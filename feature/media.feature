@@ -8,13 +8,13 @@ Feature: Media Playback
   Scenario: Media app loads and shows library
     Then the media library should be visible
 
-#  Scenario: Play a track successfully
-#    Given a track "Drive Time" is available
-#    When the user selects track "Drive Time"
-#    And the user presses play
-#    Then media should be playing
-#    And the current track should be "Drive Time"
-#
+  Scenario: Play a track successfully
+    Given a track "Drive Time" is available
+    When the user selects track "Drive Time"
+    And the user presses play
+    Then media should be playing
+    And the current track should be "Drive Time"
+
 #  Scenario: Pause and resume playback
 #    Given media is playing
 #    When the user presses pause

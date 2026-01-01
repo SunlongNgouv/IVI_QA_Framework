@@ -76,7 +76,7 @@ def media_disabled(ivi_system):
 
 @given('the battery voltage is 10.5 volts')
 def battery_state(ivi_system):
-    ivi_system.battery_volt_default = 10.5
+    ivi_system.battery_volt_now = 10.5
 
 @when('the system is powered on')
 def system_on(ivi_system):
