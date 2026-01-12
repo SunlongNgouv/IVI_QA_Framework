@@ -37,7 +37,7 @@ macOS / Linux:
 > source .venv/bin/activate
 
 3️⃣ Install dependencies
-> pyton -m pip install -r requirements.txt
+> python -m pip install -r requirements.txt
 
 (Optional) To verify the installation
 > python -m pip show pytest pytest-bdd
