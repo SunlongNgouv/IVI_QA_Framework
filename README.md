@@ -22,7 +22,7 @@ This project uses pytest to validate a mocked In-Vehicle Infotainment (IVI) syst
 ````
 1️⃣ Prerequisites
 
-Make sure you have Python 3.9+ installed.
+Make sure you have Python 3.10 installed.
 
 Check your python version 
 > python --version
