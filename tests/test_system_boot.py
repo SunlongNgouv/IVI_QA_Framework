@@ -3,7 +3,7 @@ from pytest_bdd import scenarios, given, when, then, parsers
 
 import pytest
 
-from ivi_qa_framework.src.ivi_system import PowerState, MediaState
+from src.ivi_system import PowerState, MediaState
 
 File = 'system_boot.feature'
 File_Dir = 'feature'

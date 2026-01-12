@@ -2,7 +2,7 @@ from urllib.parse import uses_relative
 
 from pytest_bdd import scenarios, given, when, then, parsers
 from pathlib import Path
-from ivi_qa_framework.src.ivi_system import *
+from src.ivi_system import *
 
 import pytest
 

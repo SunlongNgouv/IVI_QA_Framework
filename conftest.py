@@ -1,4 +1,4 @@
-from ivi_qa_framework.src.ivi_system import IVISystem
+from src.ivi_system import IVISystem
 import pytest
 
 @pytest.fixture

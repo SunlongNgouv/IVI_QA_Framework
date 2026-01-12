@@ -11,7 +11,7 @@ venv/
 env/
 
 # -------------------------
-# Pytest
+# IVI_QA_Framework
 # -------------------------
 .pytest_cache/
 .coverage

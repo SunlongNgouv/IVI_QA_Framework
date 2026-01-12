@@ -37,29 +37,32 @@ macOS / Linux:
 > source .venv/bin/activate
 
 3️⃣ Install dependencies
-> pip install -r requirements.txt
+> pyton -m pip install -r requirements.txt
 
-If requirements.txt does not work well as expected:
-> pip install pytest
+(Optional) To verify the installation
+> python -m pip show pytest pytest-bdd
+
+(Alert) If requirements.txt does not work well as expected:
+> python -m pip install pytest
 
 4️⃣ Run all tests
-> pytest
+> python -m pytest
 
 5️⃣ Run tests with verbose output
-> pytest -v
+> python -m pytest -v
 
 6️⃣ Run a specific feature or test file
 Run system boot tests:
-> pytest tests/test_system_boot.py
+> python -m pytest tests/test_system_boot.py
 
 Run media tests:
-> pytest tests/test_media.py
+> python -m pytest tests/test_media.py
 
 7️⃣ Run tests by keyword (quick debugging)
-> pytest -k test_media
+> python -m pytest -k test_media
 
 8️⃣ View test summary only (clean CI-style output)
-> pytest -q
+> python -m pytest -q
 ````
 
 ### 🧠 Learning Progression Strategy
